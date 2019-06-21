@@ -1,30 +1,34 @@
 spring:
   profiles:
-    active:
-    - dev
------
+    active: test
+
+---
 spring:
   profiles: dev
   application:
-    name: AIGOU_PLAT
+    name: AIGOU_PLAT_LOGIN_8001
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:7001/eureka/
-  instance:
-    prefer-ip-address: true
-server:
-  port: 9999
------
-spring:
-  profiles: test
-  application:
-    name: AIGOU_PLAT
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://127.0.0.1:7001/eureka
   instance:
     prefer-ip-address: true
 server:
   port: 6666
+
+
+---
+spring:
+  profiles: test
+  application:
+    name: AIGOU_PLAT_LOGIN_8001
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:7001/eureka
+  instance:
+    prefer-ip-address: true
+server:
+  port: 9999
+
+
